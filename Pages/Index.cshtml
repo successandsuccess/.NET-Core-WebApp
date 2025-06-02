@@ -1,0 +1,41 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "First Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>The time is @DateTime.Now</p>
+
+    <div class="mt-4">
+        <button class="btn btn-primary" onclick="showAlert()">Click Me</button>
+    </div>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+<div class="mt-5 border p-4">
+    <h2>Say Hello</h2>
+    <form method="post">
+        <div class="form-group">
+            <label for="name">Your Name:</label>
+            <input type="text" class="form-control" id="name" name="name">
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Submit</button>
+    </form>
+
+    @if (!string.IsNullOrEmpty(Model.Greeting)){
+        <div class="alert alert-success mt-3">
+            @Model.Greeting
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        function showAlert() {
+            alert('Hello from JavaScript');
+        }
+    </script>
+}

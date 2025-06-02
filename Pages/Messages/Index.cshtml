@@ -1,0 +1,30 @@
+@page
+@model List<HelloWorldWebApp.Models.Message>
+
+@{
+    ViewData["Title"] = "Messages";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table table-striped mt-4">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Content</th>
+            <th>Created At</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var message in Model)
+        {
+            <tr>
+                <td>@message.Id</td>
+                <td>@message.Content</td>
+                <td>@message.CreatedAt</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" class="btn btn-primary">New Message</a>
