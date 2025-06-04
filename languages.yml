@@ -1,0 +1,4 @@
+# .github/languages.yml
+C#:
+  - "*.cs"
+  - "*.cshtml"
